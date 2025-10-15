@@ -30,3 +30,15 @@ if figura == "Círculo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
+
+# RECTÁNGULO
+
+if figura == "Rectángulo":
+    st.subheader("Parámetros del círculo")
+    base = st.slider("Selecciona la base", 0.0, 20.0, 5.0)
+    altura = st.slider("Selecciona la altura", 0.0, 20.0, 5.0)
+    area = base * altura
+    perimetro = 2 * (base + altura)
+    st.metric("Área", f"{area:.2f}")
+    st.metric("Perímetro", f"{perimetro:.2f}")
+    st.success("Resultados")
