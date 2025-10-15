@@ -24,7 +24,7 @@ if figura == "Triángulo":
 
 if figura == "Círculo":
     st.subheader("Parámetros del círculo")
-    radio = st.slider("Radio de tu círculo", 0.0, 20.0, 5.0)
+    radio = st.slider("Radio del círculo", 0.0, 20.0, 5.0)
     area = math.pi * radio**2
     perimetro = 2 * math.pi * radio
     st.metric("Área", f"{area:.2f}")
@@ -35,8 +35,8 @@ if figura == "Círculo":
 
 if figura == "Rectángulo":
     st.subheader("Parámetros del círculo")
-    base = st.slider("Selecciona la base", 0.0, 20.0, 5.0)
-    altura = st.slider("Selecciona la altura", 0.0, 20.0, 5.0)
+    base = st.slider("Selecciona la magnitud de la base", 0.0, 100.0, 5.0)
+    altura = st.slider("Selecciona la magnitud de la altura", 0.0, 100.0, 5.0)
     area = base * altura
     perimetro = 2 * (base + altura)
     st.metric("Área", f"{area:.2f}")
@@ -47,7 +47,7 @@ if figura == "Rectángulo":
 
 if figura == "Cuadrado":
     st.subheader("Parámetros del cuadrado")
-    lado = st.slider("Selecciona el lado", 0.0, 20.0, 5.0)
+    lado = st.slider("Selecciona la magnitud de el lado", 0.0, 20.0, 5.0)
     area = lado**2
     perimetro = 4 * lado
     st.metric("Área", f"{area:.2f}")
