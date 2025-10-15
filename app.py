@@ -3,7 +3,7 @@ import math
 import matplotlib.pyplot as plt
 
 st.title("Calcular el área y permímetro de figuras")
-st.sidebar.write("Deyra Renata Herrera Juárez, Matrícula:38584, Grupo: 3L")
+st.sidebar.write("Deyra Renata Herrera Juárez Matrícula:38584 Grupo: 3L")
 figura = st.selectbox("Selecciona la figura", ["Triángulo", "Círculo", "Rectángulo", "Cuadrado"])
 
 #TRIÁNGULO
