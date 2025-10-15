@@ -3,4 +3,4 @@ import math
 
 st.title("Calcular el área y permímetro de figuras")
 
-st.selectbox("Figura")
+st.selectbox()
