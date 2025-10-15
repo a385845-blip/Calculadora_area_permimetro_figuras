@@ -22,7 +22,16 @@ if figura == "Triángulo":
 
 color = st.color_picker("Selecciona el color del borde", "#00f900")
 fig, ax = plt.subplots()
-
+elif figura == "Triángulo":
+    x = [-base/2, base/2, 0]
+    y = [0, 0, altura]
+    triangle = plt.Polygon(list(zip(x, y)), edgecolor=color, fill=False)
+    ax.add_artist(triangle)
+    ax.set_xlim(-base, base)
+    ax.set_ylim(0, altura + 2)
+ax.set_aspect('equal')
+ax.axis('off')
+st.pyplot(fig)
 # CÍRCULO
 
 if figura == "Círculo":
