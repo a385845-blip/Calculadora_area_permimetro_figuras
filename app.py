@@ -3,7 +3,9 @@ import math
 import matplotlib.pyplot as plt
 
 st.title("Calcular el área y permímetro de figuras")
-st.sidebar.write("Deyra Renata Herrera Juárez 385845")
+st.sidebar.write("Deyra Renata Herrera Juárez 
+Matrícula:385845
+Grupo: 3L")
 figura = st.selectbox("Selecciona la figura", ["Triángulo", "Círculo", "Rectángulo", "Cuadrado"])
 
 #TRIÁNGULO
@@ -46,10 +48,9 @@ if figura == "Círculo":
 color = st.color_picker("Selecciona el color del borde", "#00f900")
 fig, ax = plt.subplots()
 circle = plt.Circle((0, 0), radio, color=color, fill=False)
-ax.add_artist(circle)
-ax.set_xlim(-radio - 1, radio + 1)
-ax.set_ylim(-radio - 1, radio + 1)
-
+    ax.add_artist(circle)
+    ax.set_xlim(-radio - 1, radio + 1)
+    ax.set_ylim(-radio - 1, radio + 1)
 
 # RECTÁNGULO
 
