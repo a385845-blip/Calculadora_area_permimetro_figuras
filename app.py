@@ -42,3 +42,14 @@ if figura == "Rectángulo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
+
+# CUADRADO
+
+if figura == "Cuadrado":
+    st.subheader("Parámetros del cuadrado")
+    lado = st.slider("Selecciona el lado", 0.0, 20.0, 5.0)
+    area = lado**2
+    perimetro = 4 * lado
+    st.metric("Área", f"{area:.2f}")
+    st.metric("Perímetro", f"{perimetro:.2f}")
+    st.success("Resultados") 
