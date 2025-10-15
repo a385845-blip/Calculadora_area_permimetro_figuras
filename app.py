@@ -3,7 +3,7 @@ import math
 
 
 st.title("Calcular el área y permímetro de figuras")
-figura = st.selectbox("Selecciona la figura", ["Triángulo"])
+figura = st.selectbox("Selecciona la figura", ["Triángulo", "Círculo", "Rectángulo", "Cuadrado"])
 #TRIÁNGULO
 if figura == "Triángulo":
     st.subheader("Parámetros del triángulo")
