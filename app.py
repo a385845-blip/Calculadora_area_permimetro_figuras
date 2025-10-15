@@ -1,6 +1,6 @@
 import streamlit as st
 import math
-
+import matplotlib.pyplot as plt
 
 st.title("Calcular el área y permímetro de figuras")
 figura = st.selectbox("Selecciona la figura", ["Triángulo", "Círculo", "Rectángulo", "Cuadrado"])
@@ -19,6 +19,9 @@ if figura == "Triángulo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
+
+color = st.color_picker("Selecciona el color del borde", "#00f900")
+fig, ax = plt.subplots()
 
 # CÍRCULO
 
