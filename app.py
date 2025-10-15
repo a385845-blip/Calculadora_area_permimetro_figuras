@@ -22,7 +22,7 @@ if figura == "Triángulo":
 
 color = st.color_picker("Selecciona el color del borde", "#00f900")
 fig, ax = plt.subplots()
-elif figura == "Triángulo":
+if figura == "Triángulo":
     x = [-base/2, base/2, 0]
     y = [0, 0, altura]
     triangle = plt.Polygon(list(zip(x, y)), edgecolor=color, fill=False)
