@@ -26,7 +26,7 @@ if figura == "Círculo":
     st.subheader("Parámetros del círculo")
     radio = st.slider("Radio de tu círculo", 0.0, 20.0, 5.0)
     area = math.pi * radio**2
-    perimetro = 2 * mtah.pi * radio
+    perimetro = 2 * math.pi * radio
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
