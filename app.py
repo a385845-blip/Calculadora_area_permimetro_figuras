@@ -43,7 +43,7 @@ if figura == "Círculo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
-color = st.color_picker("Selecciona el color del borde", "#00f900")
+color = st.color_picker("Color del borde - Círculo", "#00f900")
 fig, ax = plt.subplots()
 circle = plt.Circle((0, 0), radio, color=color, fill=False)
 ax.set_xlim(-radio - 1, radio + 1)
