@@ -127,14 +127,21 @@ if figura == "Teorema de Pitágoras":
     cateto_a = st.number_input("Cateto a", min_value=0.0, format="%.2f")
     cateto_b = st.number_input("Cateto b", min_value=0.0, format="%.2f")
 
-    hipotenusa = math.sqrt(cateto_a**2 + cateto_b**2)
-    st.metric("Hipotenusa", f"{hipotenusa:.2f}")
-    st.success("Resultados")
+    if cateto_a > 0 and cateto_b > 0:
+        hipotenusa = math.sqrt(cateto_a**2 + cateto_b**2)
+        st.metric("Hipotenusa", f"{hipotenusa:.2f}")
+        st.success("Resultados")
 
-    fig_pitagoras, ax_pitagoras = plt.subplots()
-    triangle = plt.Polygon([[0, 0], [cateto_a, 0], [0, cateto_b]], edgecolor="blue", fill=False)
-    ax_pitagoras.add_patch(triangle)
-    ax_pitagoras.set_xlim(-1, cateto_a + 1)
+        fig_pitagoras, ax_pitagoras = plt.subplots()
+        triangle = plt.Polygon([[0, 0], [cateto_a, 0], [0, cateto_b]], edgecolor="blue", fill=False)
+        ax_pitagoras.add_patch(triangle)
+        ax_pitagoras.set_xlim(-1, cateto_a + 1)
+        ax_pitagoras.set_ylim(-1, cateto_b + 1)
+        ax_pitagoras.set_aspect('equal')
+        ax_pitagoras.axis('off')
+        st.pyplot(fig_pitagoras)
+    else:
+        st.info("Ingresa valores mayores a cero para visualizar el triángulo.")
     ax_pitagoras.set_ylim(-1, cateto_b + 1)
     ax_pitagoras.set_aspect('equal')
     ax_pitagoras.axis('off')
