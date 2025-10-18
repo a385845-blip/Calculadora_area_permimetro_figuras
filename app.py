@@ -34,8 +34,7 @@ ax.axis('off')
 st.pyplot(fig)
 
 # CÍRCULO
-
- if figura == "Círculo":
+if figura == "Círculo":
     st.subheader("Parámetros del círculo")
     radio = st.slider("Radio del círculo", 0.0, 100.0, 5.0)
     area = math.pi * radio**2
@@ -52,7 +51,7 @@ st.pyplot(fig)
     ax.set_ylim(-radio - 1, radio + 1)
     ax.set_aspect('equal')
     ax.axis('off')
-    st.pyplot(fig) 
+    st.pyplot(fig)
 
 # RECTÁNGULO
 
