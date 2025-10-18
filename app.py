@@ -44,14 +44,14 @@ if figura == "Círculo":
     st.success("Resultados")
 
     color = st.color_picker("Color del borde - Círculo", "#00f900")
-    fig, ax = plt.subplots()
+    fig_circulo, ax_circulo = plt.subplots()
     circle = plt.Circle((0, 0), radio, color=color, fill=False)
-    ax.add_artist(circle)
-    ax.set_xlim(-radio - 1, radio + 1)
-    ax.set_ylim(-radio - 1, radio + 1)
-    ax.set_aspect('equal')
-    ax.axis('off')
-    st.pyplot(fig)
+    ax_circulo.add_artist(circle)
+    ax_circulo.set_xlim(-radio - 1, radio + 1)
+    ax_circulo.set_ylim(-radio - 1, radio + 1)
+    ax_circulo.set_aspect('equal')
+    ax_circulo.axis('off')
+    st.pyplot(fig_circulo)
 
 # RECTÁNGULO
 
