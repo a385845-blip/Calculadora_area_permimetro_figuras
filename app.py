@@ -20,6 +20,7 @@ with tab1:
         lado_a = st.number_input("Lado a", min_value=0.0, format="%.2f")
         lado_b = st.number_input("Lado b", min_value=0.0, format="%.2f")
         lado_c = st.number_input("Lado c", min_value=0.0, format="%.2f")
+        color = st.color_picker("Color del borde", "#00F900")
         area = 0.5 * base * altura
         perimetro = lado_a + lado_b + lado_c
         st.metric("Área", f"{area:.2f}")
@@ -43,12 +44,13 @@ with tab1:
         radio = st.slider("Radio del círculo", 0.0, 100.0, 5.0)
         area = math.pi * radio**2
         perimetro = 2 * math.pi * radio
+        color = st.color_picker("Color del borde", "#00F900")
         st.metric("Área", f"{area:.2f}")
         st.metric("Perímetro", f"{perimetro:.2f}")
         st.success("Resultados")
 
         fig_circulo, ax_circulo = plt.subplots()
-        circle = plt.Circle((0, 0), radio, color="green", fill=False)
+        circle = plt.Circle((0, 0), radio, color=color, fill=False)
         ax_circulo.add_artist(circle)
         ax_circulo.set_xlim(-radio - 1, radio + 1)
         ax_circulo.set_ylim(-radio - 1, radio + 1)
