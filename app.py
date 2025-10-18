@@ -3,7 +3,7 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 
-st.title("Calcular el área y permímetro de figuras")
+st.title("Calculadora Geométrica y Trigonométrica.")
 st.sidebar.write("Deyra Renata Herrera Juárez Matrícula:38584 Grupo: 3L")
 # Crear pestañas
 tab1, tab2 = st.tabs(["Geometría", "Trigonometría"])
