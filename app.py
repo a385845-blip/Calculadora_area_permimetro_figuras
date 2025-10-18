@@ -51,6 +51,7 @@ if figura == "Círculo":
     ax.set_xlim(-radio - 1, radio + 1)
     ax.set_ylim(-radio - 1, radio + 1)
 
+
 # RECTÁNGULO
 
 if figura == "Rectángulo":
