@@ -58,7 +58,7 @@ if figura == "Círculo":
 # RECTÁNGULO
 
 if figura == "Rectángulo":
-    st.subheader("Parámetros del círculo")
+    st.subheader("Parámetros del Rectángulo")
     base = st.slider("Selecciona la magnitud de la base", 0.0, 100.0, 5.0)
     altura = st.slider("Selecciona la magnitud de la altura", 0.0, 100.0, 5.0)
     area = base * altura
@@ -66,6 +66,16 @@ if figura == "Rectángulo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
+
+color = st.color_picker("Color del borde - Rectángulo", "#00f900")
+    fig, ax = plt.subplots()
+    rect = plt.Rectangle((0, 0), base, altura, edgecolor=color, facecolor='none')
+    ax.add_patch(rect)
+    ax.set_xlim(-1, base + 1)
+    ax.set_ylim(-1, altura + 1)
+    ax.set_aspect('equal')
+    ax.axis('off')
+    st.pyplot(fig)
 
 # CUADRADO
 
@@ -77,3 +87,12 @@ if figura == "Cuadrado":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados") 
+     color = st.color_picker("Color del borde - Cuadrado", "#00f900")
+    fig, ax = plt.subplots()
+    square = plt.Rectangle((0, 0), lado, lado, edgecolor=color, facecolor='none')
+    ax.add_patch(square)
+    ax.set_xlim(-1, lado + 1)
+    ax.set_ylim(-1, lado + 1)
+    ax.set_aspect('equal')
+    ax.axis('off')
+    st.pyplot(fig)
