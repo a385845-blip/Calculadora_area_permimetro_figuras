@@ -35,7 +35,7 @@ st.pyplot(fig)
 
 # CÍRCULO
 
-if figura == "Círculo":
+ if figura == "Círculo":
     st.subheader("Parámetros del círculo")
     radio = st.slider("Radio del círculo", 0.0, 100.0, 5.0)
     area = math.pi * radio**2
@@ -43,6 +43,7 @@ if figura == "Círculo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
+
     color = st.color_picker("Color del borde - Círculo", "#00f900")
     fig, ax = plt.subplots()
     circle = plt.Circle((0, 0), radio, color=color, fill=False)
@@ -50,8 +51,8 @@ if figura == "Círculo":
     ax.set_xlim(-radio - 1, radio + 1)
     ax.set_ylim(-radio - 1, radio + 1)
     ax.set_aspect('equal')
-    ax.axis('off')  
-    st.pyplot(fig)
+    ax.axis('off')
+    st.pyplot(fig) 
 
 # RECTÁNGULO
 
@@ -73,8 +74,7 @@ if figura == "Rectángulo":
     ax.set_ylim(-1, altura + 1)
     ax.set_aspect('equal')
     ax.axis('off')
-    st.pyplot(fig)
-
+    
 # CUADRADO
 
 if figura == "Cuadrado":
@@ -94,5 +94,4 @@ if figura == "Cuadrado":
     ax.set_ylim(-1, lado + 1)
     ax.set_aspect('equal')
     ax.axis('off')
-    st.pyplot(fig)
     st.pyplot(fig)
