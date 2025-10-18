@@ -29,7 +29,7 @@ with tab1:
         fig_tri, ax_tri = plt.subplots()
         x = [-base/2, base/2, 0]
         y = [0, 0, altura]
-        triangle = plt.Polygon(list(zip(x, y)), edgecolor="blue", fill=False)
+        triangle = plt.Polygon(list(zip(x, y)), edgecolor="color", fill=False)
         ax_tri.add_patch(triangle)
         ax_tri.set_xlim(-base, base)
         ax_tri.set_ylim(0, altura + 2)
