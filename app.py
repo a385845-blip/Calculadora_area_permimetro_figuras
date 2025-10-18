@@ -1,6 +1,7 @@
 import streamlit as st
 import math
 import matplotlib.pyplot as plt
+import numpy as np
 
 st.title("Calcular el área y permímetro de figuras")
 st.sidebar.write("Deyra Renata Herrera Juárez Matrícula:38584 Grupo: 3L")
@@ -96,3 +97,22 @@ if figura == "Cuadrado":
     ax.axis('off')
     st.pyplot(fig)
     
+st.header("Funciones Trigonométricas")
+
+funcion = st.selectbox("Selecciona la función", ["seno", "coseno", "tangente"])
+rango = st.slider("Rango (en radianes)", 0.0, 4 * np.pi, (0.0, 2 * np.pi))
+amplitud = st.slider("Amplitud", 0.1, 5.0, 1.0)
+
+x = np.linspace(rango[0], rango[1], 300)
+
+if funcion == "seno":
+    y = amplitud * np.sin(x)
+    st.line_chart(y)
+elif funcion == "coseno":
+    y = amplitud * np.cos(x)
+    st.line_chart(y)
+elif funcion == "tangente":
+    y = amplitud * np.tan(x)
+    # Evita valores extremos
+    y[np.abs(y) > 10] = np.nan
+    st.line_chart(y)
