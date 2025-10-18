@@ -5,7 +5,7 @@ import numpy as np
 
 st.title("Calcular el área y permímetro de figuras")
 st.sidebar.write("Deyra Renata Herrera Juárez Matrícula:38584 Grupo: 3L")
-figura = st.selectbox("Selecciona la figura", ["Triángulo", "Círculo", "Rectángulo", "Cuadrado"])
+figura = st.selectbox("Selecciona la figura", ["Triángulo", "Círculo", "Rectángulo", "Cuadrado", "Trigonometría", "Teorema de pitágoras"])
 
 #TRIÁNGULO
 
@@ -97,22 +97,45 @@ if figura == "Cuadrado":
     ax.axis('off')
     st.pyplot(fig)
     
-st.header("Funciones Trigonométricas")
+# Trigonometría
 
-funcion = st.selectbox("Selecciona la función", ["seno", "coseno", "tangente"])
-rango = st.slider("Rango (en radianes)", 0.0, 4 * np.pi, (0.0, 2 * np.pi))
-amplitud = st.slider("Amplitud", 0.1, 5.0, 1.0)
+if figura == "Trigonometría":
+    st.subheader("Funciones trigonométricas")
+    funcion = st.selectbox("Selecciona la función", ["Seno", "Coseno", "Tangente"])
+    rango = st.slider("Rango en radianes", 0.0, 4 * math.pi, (0.0, 2 * math.pi))
+    amplitud = st.slider("Amplitud", 0.1, 5.0, 1.0)
 
-x = np.linspace(rango[0], rango[1], 300)
+    x = np.linspace(rango[0], rango[1], 300)
 
-if funcion == "seno":
-    y = amplitud * np.sin(x)
-    st.line_chart(y)
-elif funcion == "coseno":
-    y = amplitud * np.cos(x)
-    st.line_chart(y)
-elif funcion == "tangente":
-    y = amplitud * np.tan(x)
-    # Evita valores extremos
-    y[np.abs(y) > 10] = np.nan
-    st.line_chart(y)
+    if funcion == "Seno":
+        y = amplitud * np.sin(x)
+    elif funcion == "Coseno":
+        y = amplitud * np.cos(x)
+    elif funcion == "Tangente":
+        y = amplitud * np.tan(x)
+        y[np.abs(y) > 10] = np.nan  # Evita saltos extremos
+
+    fig_trigo, ax_trigo = plt.subplots()
+    ax_trigo.plot(x, y, color="purple")
+    ax_trigo.set_title(f"Función {funcion}")
+    ax_trigo.grid(True)
+    st.pyplot(fig_trigo)
+
+# Teorema de pitágoras
+if figura == "Teorema de Pitágoras":
+    st.subheader("Calculadora del Teorema de Pitágoras")
+    cateto_a = st.number_input("Cateto a", min_value=0.0, format="%.2f")
+    cateto_b = st.number_input("Cateto b", min_value=0.0, format="%.2f")
+
+    hipotenusa = math.sqrt(cateto_a**2 + cateto_b**2)
+    st.metric("Hipotenusa", f"{hipotenusa:.2f}")
+
+    fig_pitagoras, ax_pitagoras = plt.subplots()
+    triangle = plt.Polygon([[0, 0], [cateto_a, 0], [0, cateto_b]], edgecolor="blue", fill=False)
+    ax_pitagoras.add_patch(triangle)
+    ax_pitagoras.set_xlim(-1, cateto_a + 1)
+    ax_pitagoras.set_ylim(-1, cateto_b + 1)
+    ax_pitagoras.set_aspect('equal')
+    ax_pitagoras.axis('off')
+    st.pyplot(fig_pitagoras)
+
