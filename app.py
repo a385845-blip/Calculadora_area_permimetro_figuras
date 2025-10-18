@@ -146,4 +146,5 @@ with tab2:
     ax_funcion.plot(x, y, color="red")
     ax_funcion.set_title(f"Función: {opcion}")
     ax_funcion.grid(True)
+    st.pyplot(fig_funcion)
     
