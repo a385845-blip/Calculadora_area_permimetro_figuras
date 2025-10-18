@@ -67,9 +67,8 @@ if figura == "Rectángulo":
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
 
-    # Visualización
     color = st.color_picker("Color del borde - Rectángulo", "#FF5733")
-    fig, ax = plt.subplots()  # ← esta línea debe tener la misma indentación que las anteriores
+    fig, ax = plt.subplots()
     rect = plt.Rectangle((0, 0), base, altura, edgecolor=color, facecolor='none')
     ax.add_patch(rect)
     ax.set_xlim(-1, base + 1)
@@ -81,14 +80,15 @@ if figura == "Rectángulo":
 # CUADRADO
 
 if figura == "Cuadrado":
-    st.subheader("Parámetros del cuadrado")
-    lado = st.slider("Selecciona la magnitud de el lado", 0.0, 100.0, 5.0)
+    st.subheader("Parámetros del Cuadrado")
+    lado = st.slider("Selecciona la magnitud del lado", 0.0, 100.0, 5.0)
     area = lado**2
     perimetro = 4 * lado
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
-    st.success("Resultados") 
-     color = st.color_picker("Color del borde - Cuadrado", "#00f900")
+    st.success("Resultados")
+
+    color = st.color_picker("Color del borde - Cuadrado", "#33FFAA")
     fig, ax = plt.subplots()
     square = plt.Rectangle((0, 0), lado, lado, edgecolor=color, facecolor='none')
     ax.add_patch(square)
@@ -96,4 +96,5 @@ if figura == "Cuadrado":
     ax.set_ylim(-1, lado + 1)
     ax.set_aspect('equal')
     ax.axis('off')
+    st.pyplot(fig)
     st.pyplot(fig)
