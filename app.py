@@ -129,6 +129,7 @@ if figura == "Teorema de Pitágoras":
 
     hipotenusa = math.sqrt(cateto_a**2 + cateto_b**2)
     st.metric("Hipotenusa", f"{hipotenusa:.2f}")
+    st.success("Resultados")
 
     fig_pitagoras, ax_pitagoras = plt.subplots()
     triangle = plt.Polygon([[0, 0], [cateto_a, 0], [0, cateto_b]], edgecolor="blue", fill=False)
