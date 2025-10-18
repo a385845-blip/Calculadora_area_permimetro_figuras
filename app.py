@@ -91,7 +91,7 @@ with tab1:
         st.success("Resultados")
 
         fig_cuad, ax_cuad = plt.subplots()
-        square = plt.Rectangle((0, 0), lado, lado, edgecolor="color", facecolor='none')
+        square = plt.Rectangle((0, 0), lado, lado, edgecolor=color, facecolor='none')
         ax_cuad.add_patch(square)
         ax_cuad.set_xlim(-1, lado + 1)
         ax_cuad.set_ylim(-1, lado + 1)
