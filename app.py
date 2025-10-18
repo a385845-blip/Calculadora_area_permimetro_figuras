@@ -132,13 +132,27 @@ if figura == "Teorema de Pitágoras":
         st.metric("Hipotenusa", f"{hipotenusa:.2f}")
         st.success("Resultados")
 
+        # Coordenadas del triángulo rectángulo
+        punto_A = [0, 0]
+        punto_B = [cateto_a, 0]
+        punto_C = [cateto_a, cateto_b]
+
         fig_pitagoras, ax_pitagoras = plt.subplots()
-        triangle = plt.Polygon([[0, 0], [cateto_a, 0], [0, cateto_b]], edgecolor="blue", fill=False)
+        triangle = plt.Polygon([punto_A, punto_B, punto_C], edgecolor="blue", fill=False)
         ax_pitagoras.add_patch(triangle)
-        ax_pitagoras.set_xlim(-1, cateto_a + 1)
-        ax_pitagoras.set_ylim(-1, cateto_b + 1)
+
+        # Etiquetas
+        ax_pitagoras.text((punto_A[0] + punto_B[0]) / 2, -0.5, "a", ha='center')
+        ax_pitagoras.text(punto_C[0] + 0.5, (punto_B[1] + punto_C[1]) / 2, "b", va='center')
+        ax_pitagoras.text((punto_A[0] + punto_C[0]) / 2 - 0.5, (punto_A[1] + punto_C[1]) / 2, "c", rotation=45)
+
+        ax_pitagoras.set_xlim(-1, cateto_a + 2)
+        ax_pitagoras.set_ylim(-1, cateto_b + 2)
         ax_pitagoras.set_aspect('equal')
         ax_pitagoras.axis('off')
+        st.pyplot(fig_pitagoras)
+    else:
+        st.info("Ingresa valores mayores a cero para visualizar el triángulo.")
         st.pyplot(fig_pitagoras)
     else:
         st.info("Ingresa valores mayores a cero para visualizar el triángulo.")
