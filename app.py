@@ -31,7 +31,7 @@ if figura == "Triángulo":
     ax.set_ylim(0, altura + 2)
 ax.set_aspect('equal')
 ax.axis('off')
-st.pyplot(fig_triángulo)
+st.pyplot(fig)
 
 # CÍRCULO
 if figura == "Círculo":
@@ -51,7 +51,7 @@ if figura == "Círculo":
     ax.set_ylim(-radio - 1, radio + 1)
     ax.set_aspect('equal')
     ax.axis('off')
-    st.pyplot(fig_círculo)
+    st.pyplot(fig)
 
 # RECTÁNGULO
 
@@ -73,7 +73,7 @@ if figura == "Rectángulo":
     ax.set_ylim(-1, altura + 1)
     ax.set_aspect('equal')
     ax.axis('off')
-    st.pyplot(fig_rectángulo)
+    st.pyplot(fig)
     
 # CUADRADO
 
@@ -94,5 +94,5 @@ if figura == "Cuadrado":
     ax.set_ylim(-1, lado + 1)
     ax.set_aspect('equal')
     ax.axis('off')
-    st.pyplot(fig_cuadrado)
+    st.pyplot(fig)
     
