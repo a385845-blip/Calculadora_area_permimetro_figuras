@@ -142,8 +142,5 @@ if figura == "Teorema de Pitágoras":
         st.pyplot(fig_pitagoras)
     else:
         st.info("Ingresa valores mayores a cero para visualizar el triángulo.")
-    ax_pitagoras.set_ylim(-1, cateto_b + 1)
-    ax_pitagoras.set_aspect('equal')
-    ax_pitagoras.axis('off')
-    st.pyplot(fig_pitagoras)
+  
 
