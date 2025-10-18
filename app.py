@@ -122,7 +122,6 @@ if figura == "Trigonometría":
     st.pyplot(fig_trigo)
 
 # Teorema de pitágoras
-
 if figura == "Teorema de Pitágoras":
     st.subheader("Calculadora del Teorema de Pitágoras")
     cateto_a = st.number_input("Cateto a", min_value=0.0, format="%.2f")
@@ -133,9 +132,20 @@ if figura == "Teorema de Pitágoras":
         st.metric("Hipotenusa", f"{hipotenusa:.2f}")
         st.success("Resultados")
 
+        # Coordenadas de los vértices del triángulo rectángulo
+        A = [0, 0]
+        B = [cateto_a, 0]
+        C = [cateto_a, cateto_b]
+
         fig_pitagoras, ax_pitagoras = plt.subplots()
-        triangle = plt.Polygon([[0, 0], [cateto_a, 0], [cateto_a, cateto_b]], edgecolor="blue", fill=False)
+        triangle = plt.Polygon([A, B, C], edgecolor="blue", fill=False)
         ax_pitagoras.add_patch(triangle)
+
+        # Etiquetas de los lados
+        ax_pitagoras.text((A[0] + B[0]) / 2, -0.5, "a", ha='center')
+        ax_pitagoras.text(C[0] + 0.5, (B[1] + C[1]) / 2, "b", va='center')
+        ax_pitagoras.text((A[0] + C[0]) / 2 - 0.5, (A[1] + C[1]) / 2, "c", rotation=45)
+
         ax_pitagoras.set_xlim(-1, cateto_a + 2)
         ax_pitagoras.set_ylim(-1, cateto_b + 2)
         ax_pitagoras.set_aspect('equal')
@@ -143,5 +153,4 @@ if figura == "Teorema de Pitágoras":
         st.pyplot(fig_pitagoras)
     else:
         st.info("Ingresa valores mayores a cero para visualizar el triángulo.")
-            
 
