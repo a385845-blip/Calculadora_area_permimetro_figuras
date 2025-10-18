@@ -73,6 +73,7 @@ if figura == "Rectángulo":
     ax.set_ylim(-1, altura + 1)
     ax.set_aspect('equal')
     ax.axis('off')
+    st.pyplot(fig)
     
 # CUADRADO
 
