@@ -67,8 +67,9 @@ if figura == "Rectángulo":
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
 
-color = st.color_picker("Color del borde - Rectángulo", "#00f900")
-    fig, ax = plt.subplots()
+    # Visualización
+    color = st.color_picker("Color del borde - Rectángulo", "#FF5733")
+    fig, ax = plt.subplots()  # ← esta línea debe tener la misma indentación que las anteriores
     rect = plt.Rectangle((0, 0), base, altura, edgecolor=color, facecolor='none')
     ax.add_patch(rect)
     ax.set_xlim(-1, base + 1)
