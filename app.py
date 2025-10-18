@@ -142,6 +142,6 @@ if figura == "Teorema de Pitágoras":
         ax_pitagoras.axis('off')
         st.pyplot(fig_pitagoras)
     else:
-        st.info("Ingresa valores mayores a cero para visualizar el triángulo."
+        st.info("Ingresa valores mayores a cero para visualizar el triángulo.")
             
 
