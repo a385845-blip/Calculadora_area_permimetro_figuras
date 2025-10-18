@@ -20,18 +20,18 @@ if figura == "Triángulo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("Resultados")
-color = st.color_picker("Selecciona el color del borde", "#00f900")
-fig, ax = plt.subplots()
-if figura == "Triángulo":
+
+    color = st.color_picker("Color del borde - Triángulo", "#00f900")
+    fig_triangulo, ax_triangulo = plt.subplots()
     x = [-base/2, base/2, 0]
     y = [0, 0, altura]
     triangle = plt.Polygon(list(zip(x, y)), edgecolor=color, fill=False)
-    ax.add_artist(triangle)
-    ax.set_xlim(-base, base)
-    ax.set_ylim(0, altura + 2)
-ax.set_aspect('equal')
-ax.axis('off')
-st.pyplot(fig)
+    ax_triangulo.add_artist(triangle)
+    ax_triangulo.set_xlim(-base, base)
+    ax_triangulo.set_ylim(0, altura + 2)
+    ax_triangulo.set_aspect('equal')
+    ax_triangulo.axis('off')
+    st.pyplot(fig_triangulo)
 
 # CÍRCULO
 if figura == "Círculo":
