@@ -65,12 +65,13 @@ with tab1:
         altura = st.slider("Altura", 0.0, 100.0, 5.0)
         area = base * altura
         perimetro = 2 * (base + altura)
+        color = st.color_picker("Color del borde", "#00F900")
         st.metric("Área", f"{area:.2f}")
         st.metric("Perímetro", f"{perimetro:.2f}")
         st.success("Resultados")
 
         fig_rect, ax_rect = plt.subplots()
-        rect = plt.Rectangle((0, 0), base, altura, edgecolor="orange", facecolor='none')
+        rect = plt.Rectangle((0, 0), base, altura, edgecolor=color, facecolor='none')
         ax_rect.add_patch(rect)
         ax_rect.set_xlim(-1, base + 1)
         ax_rect.set_ylim(-1, altura + 1)
@@ -84,12 +85,13 @@ with tab1:
         lado = st.slider("Lado", 0.0, 100.0, 5.0)
         area = lado**2
         perimetro = 4 * lado
+        color = st.color_picker("Color del borde", "#00F900")
         st.metric("Área", f"{area:.2f}")
         st.metric("Perímetro", f"{perimetro:.2f}")
         st.success("Resultados")
 
         fig_cuad, ax_cuad = plt.subplots()
-        square = plt.Rectangle((0, 0), lado, lado, edgecolor="purple", facecolor='none')
+        square = plt.Rectangle((0, 0), lado, lado, edgecolor="color", facecolor='none')
         ax_cuad.add_patch(square)
         ax_cuad.set_xlim(-1, lado + 1)
         ax_cuad.set_ylim(-1, lado + 1)
@@ -102,6 +104,7 @@ with tab1:
         st.subheader("Calculadora del Teorema de Pitágoras")
         cateto_a = st.number_input("Cateto a", min_value=0.0, format="%.2f")
         cateto_b = st.number_input("Cateto b", min_value=0.0, format="%.2f")
+        color = st.color_picker("Color del borde", "#00F900")
 
         if cateto_a > 0 and cateto_b > 0:
             hipotenusa = math.sqrt(cateto_a**2 + cateto_b**2)
@@ -113,7 +116,7 @@ with tab1:
             C = [cateto_a, cateto_b]
 
             fig_pitagoras, ax_pitagoras = plt.subplots()
-            triangle = plt.Polygon([A, B, C], edgecolor="blue", fill=False)
+            triangle = plt.Polygon([A, B, C], edgecolor=color, fill=False)
             ax_pitagoras.add_patch(triangle)
             ax_pitagoras.text((A[0] + B[0]) / 2, -0.5, "a", ha='center')
             ax_pitagoras.text(C[0] + 0.5, (B[1] + C[1]) / 2, "b", va='center')
